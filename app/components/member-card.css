@@ -1,0 +1,40 @@
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.member-name {
+  color: var(--color-accent);
+  font-weight: 700;
+  margin: 0;
+}
+
+.member-role {
+  color: #999;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.member-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-photo-placeholder {
+  background: #2a2a2a;
+}
+
+.member-details {
+  margin-top: 0.75rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}

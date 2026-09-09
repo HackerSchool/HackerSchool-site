@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import {useLanguage} from "../context/LanguageContext.tsx"
 import "./navbar.css";
 
 const NAV_LINKS = [
@@ -13,7 +14,7 @@ const NAV_LINKS = [
 type Lang = "PT" | "EN";
 
 export default function Navbar() {
-  const [lang, setLang] = useState<Lang>("PT");
+  const {lang, setLang} = useLanguage();
   const [open, setOpen] = useState(false);
 
   return (

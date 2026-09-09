@@ -1,0 +1,25 @@
+.page-title {
+  color: var(--color-accent);
+  text-align: center;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 0.75rem;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+}
+
+.member-row {
+  display: flex;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.member-row > * {
+  flex: 1;
+  border-right: 1px solid #2a2a2a;
+}
+
+.member-row > *:last-child {
+  border-right: none;
+}
