@@ -1,8 +1,9 @@
 export type Member = {
+  ist_nr: string;
   name: string;
   role: string;
-  equipa: string[];
-  photo?: string;
+  teams: string[];
+  photoUrl?: string;
   email: string;
   github?: string;
   bio?: string;

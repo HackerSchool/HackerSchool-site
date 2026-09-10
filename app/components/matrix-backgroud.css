@@ -1,0 +1,7 @@
+.matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* behind everything else */
+  pointer-events: none; /* clicks pass through to the page underneath */
+}

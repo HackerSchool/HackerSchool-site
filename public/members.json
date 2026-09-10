@@ -1,7 +1,9 @@
 [
   {
+    "ist_nr": "ist187717",
     "name": "Diogo",
-    "role": "Dev Member",
+    "role": "pres",
+    "teams": ["direcao", "dev"],
     "email": "diogo.das.neves@tecnico.ulisboa.pt",
     "github": "diogo-das-neves",
     "bio": "Trying to build cool stuff"

@@ -1,13 +1,13 @@
-export const ordem_equipas = [
-  {PT: "Direção", EN: "Board"},
-  {PT: "Desenvolvimento", EN: "Dev Team"},
-  {PT: "Recursos Humanos", EN: "Human Resources"},
-  {PT: "Marketing", EN: "Marketing"},
-  {PT: "Gestão Laboratório", EN: "Laboratory Management"},
-  {PT: "Membros", EN: "Members"},
+export const TEAM_ORDERS = [
+  "direcao",
+  "dev",
+  "RH",
+  "marketing",
+  "lab",
+  "membro",
 ] as const;
 
-export const labels_equipas: Record<string, {PT: string; EN: string }> = {
+export const TEAM_LABELS: Record<string, {PT: string; EN: string }> = {
   "direcao": {PT: "Direção", EN: "Board"},
   "dev": {PT: "Desenvolvimento", EN: "Dev Team"},
   "RH": {PT: "Recursos Humanos", EN: "Human Resources"},
@@ -16,7 +16,7 @@ export const labels_equipas: Record<string, {PT: string; EN: string }> = {
   "membro": {PT: "Membros", EN: "Members"},
 }
 
-export const labels_roles:Record<string, {PT: string; EN: string }> = {
+export const ROLES_LABELS: Record<string, {PT: string; EN: string }> = {
   "pres": {PT: "Presidente", EN: "President"},
   "vice": {PT: "Vice Presidente", EN: "Vice President"},
   "tres": {PT: "Tesoureiro", EN: "Treasurer"},
@@ -25,4 +25,6 @@ export const labels_roles:Record<string, {PT: string; EN: string }> = {
   "coord-mark": {PT: "Coordenador Marketing", EN: "Marketing Coordinator"},
   "coord-lab": {PT: "Coordenador OpenLab", EN: "OpenLab Coordinator"},
   "lab": {PT: "Monitor Lab", EN: "Lab Monitor"},
+  "dev": {PT: "Dev", EN: "Dev"},
+  "membro": {PT: "", EN: ""},
 }

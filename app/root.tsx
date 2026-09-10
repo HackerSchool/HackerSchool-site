@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import {LanguageProvider} from "./context/LanguageContext.tsx"
+import MatrixBackground  from "./components/MatrixBackground"
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -45,9 +46,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <LanguageProvider>
+    <>
+    <MatrixBackground/>
     <Outlet/>
-    </LanguageProvider>
+    </>
   )
 }
 

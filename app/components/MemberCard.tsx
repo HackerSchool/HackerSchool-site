@@ -1,8 +1,7 @@
-// app/components/MemberCard.tsx
 import { useState } from "react";
-import type { Member } from "../types/member";
+import type { Member } from "../types/memberType";
 import { useLanguage } from "../context/LanguageContext";
-import { ROLE_LABELS } from "../config/labels";
+import { ROLES_LABELS } from "../config/labels";
 import "./member-card.css";
 
 type MemberCardProps = {
@@ -16,7 +15,7 @@ export default function MemberCard({ member }: MemberCardProps) {
   // Fallback prevents a crash if `member.role` doesn't match any key in
   // ROLE_LABELS (e.g. a typo in members.json). Falls back to showing the
   // raw id string instead, so the mistake is visible rather than fatal.
-  const roleLabel = ROLE_LABELS[member.role]?.[lang] ?? member.role;
+  const roleLabel = ROLES_LABELS[member.role]?.[lang] ?? member.role;
 
   return (
     <button

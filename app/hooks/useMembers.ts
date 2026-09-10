@@ -1,6 +1,6 @@
 // app/hooks/useMembers.ts
 import { useEffect, useState } from "react";
-import type { Member } from "../types/member";
+import type { Member } from "../types/memberType";
 
 export function useMembers() {
   const [members, setMembers] = useState<Member[]>([]);
