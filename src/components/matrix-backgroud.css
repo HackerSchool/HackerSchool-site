@@ -1,0 +1,18 @@
+.matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2; /* furthest back */
+  pointer-events: none;
+}
+
+.matrix-spotlight-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* above the canvas, still behind real content */
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 0%, black 80%);
+}

@@ -58,6 +58,10 @@ export default function MatrixBackground() {
       clearInterval((canvas as any)._matrixInterval);
     };
   }, []);
-
-  return <canvas ref={canvasRef} className="matrix-canvas" />;
+  return (
+    <>
+      <canvas ref={canvasRef} className="matrix-canvas" />
+      <div className="matrix-spotlight-overlay" />
+    </>
+  );
 }

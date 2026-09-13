@@ -1,0 +1,49 @@
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+}
+
+.member-name {
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.member-role {
+  color: var(--color-text-dim);
+  margin: 0.25rem 0 0.75rem;
+}
+
+.member-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-photo-placeholder {
+  background: var(--color-surface-alt);
+}
+
+.member-details {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+}
