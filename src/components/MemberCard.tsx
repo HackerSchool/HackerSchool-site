@@ -25,14 +25,12 @@ export default function MemberCard({ member }: MemberCardProps) {
     >
       <h3 className="member-name">{member.name}</h3>
       <p className="member-role">{roleLabel}</p>
-
-      {member.photoUrl ? (
-        <img src={member.photoUrl} alt={member.name} className="member-photo" />
-      ) : (
-        <div className="member-photo member-photo-placeholder" />
-      )}
-
-      {expanded && (
+      <img
+      src={`http://localhost:8000/members/${member.ist_id}/image`}
+        alt={member.name}
+      className="member-photo"
+      />
+            {expanded && (
         <div className="member-details">
           <p>{member.email}</p>
           {member.github && <p>GitHub: {member.github}</p>}

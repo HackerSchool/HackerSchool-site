@@ -15,7 +15,11 @@ export default function Membros() {
   return (
     <div>
       {TEAM_ORDERS.map((teamKey) => {
-        const teamMembers = members.filter((m) => m.teams?.includes(teamKey));
+        const teamMembers = members.filter((m) =>
+  m.teams?.some((team) =>
+    team.split(",").map((t) => t.trim()).includes(teamKey)
+  )
+);
         if (teamMembers.length === 0) return null;
 
         const teamLabel = TEAM_LABELS[teamKey]?.[lang] ?? teamKey;
@@ -25,7 +29,7 @@ export default function Membros() {
             <h1 className="page-title">{teamLabel}</h1>
             <div className="member-row">
               {teamMembers.map((m) => (
-                <MemberCard key={m.ist_nr} member={m} />
+                <MemberCard key={m.ist_id} member={m} />
               ))}
             </div>
           </section>

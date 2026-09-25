@@ -1,0 +1,42 @@
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+}
+
+.project-name {
+  color: var(--color-accent);
+  margin: 0 0 0.25rem;
+}
+
+.project-state {
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem;
+}
+
+.project-members {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+}
+
+.project-members-empty {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--color-text-dim);
+  opacity: 0.6;
+}

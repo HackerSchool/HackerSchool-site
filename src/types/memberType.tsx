@@ -1,10 +1,10 @@
 export type Member = {
-  ist_nr: string;
+  ist_id: string;
   name: string;
+  email: string;
+  course?: string;
   role: string;
   teams: string[];
-  photoUrl?: string;
-  email: string;
-  github?: string;
   bio?: string;
+  github?: string;
 };

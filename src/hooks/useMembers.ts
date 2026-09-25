@@ -8,7 +8,7 @@ export function useMembers() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/members.json")
+    fetch("http://localhost:8000/members")
       .then((res) => {
         if (!res.ok) throw new Error(`Failed to load members: ${res.status}`);
         return res.json();
