@@ -1,75 +1,44 @@
-# React + TypeScript + Vite
+# Site da HackerSchool em React
+Este ano estamos a trabalhar em migrar o site para React com Typescript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Desenvolvimento
 
-Currently, two official plugins are available:
+O site usa simplesmente React + Vite. Este projeto está ligado também à nova API que está a ser desenvolvido em paralelo. A API pode ser encontrada [aqui](https://github.com/HackerSchool/HS-API-Simple).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Dependências
+A única dependência do site é [Node.js](https://nodejs.org/en)
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+Após o Node.js estiver instaldo, é preciso instalar os packages que o site utiliza. Para tal bastar correr o seguinte comando na diretoria onde estiver o ficheiro `package.json`:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+Após isto, para visualizar o site em tempo real basta correr
+```bash
+npm run dev
 ```
+
+> **🔧 Nota:** Não estando ainda operacional, não há outra versão para além da de desenvolvimento.
+>
+> Com o site operacional, o desenvolvimento deverá ser realizado na branch `dev`. A branch `main` é utilizada apenas para o código de produção. 
+
+## Deploy
+
+O site é alojado no servidor siga que o Técnico oferece. 
+
+Antes de fazer deploy, é preciso criar a versão de produção do site, para tal basta correr:
+```bash
+npm run build
+```
+
+A diretoria `dist/` será criada que contém os ficheiros necessários para o funcionamento do site.
+
+O deploy é feito através de `rsync`. É recomendado correr o comando com a flag `n` para fazer um teste antes de copiar os ficheiros para o destino.
+
+```bash
+rsync -avzn dist/ <ist_id>@sigma.tecnico.ulisboa.pt:/afs/ist.utl.pt/groups/hackerschool/web
+```
+O campo <ist_id> deve ser substituido pelo login que é utilzado no fénix. É necessário ter o seviço `afs` ativo. Para isso basta recorrer ao serviço de self-service disponibilizado pela DSI [aqui](https://selfservice.dsi.tecnico.ulisboa.pt/)
+
+>**Importante**: Para fazer deploy, é necessário ter permissões, quem não tem permissões deve falar com o coordenador de dev ou outro membro da direção sobre tal.
+
